@@ -5,6 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class NumberList {
 	public static void main(String[] args) {
@@ -43,11 +44,22 @@ public class NumberList {
 			System.out.println("math5 lambda :"+ n);
 		});
 		
+		System.out.println("Method6 : Iterate each element of list to double");
 		Function<Integer, Double> toDoubleValue = Integer :: doubleValue;
 		List<Double> doubleList = new ArrayList<>();
 		intList.forEach(n ->{
 			doubleList.add(toDoubleValue.apply(n));
 		});
 		System.out.println("Method6 double Values : "+doubleList);
+		
+		System.out.println("Method7 : test the intList numbers are even or not ");
+		
+		Predicate<Integer> isEvenValue = n -> n > 0 && n % 2 == 0;
+		List<Integer> evenNumber = new ArrayList<>();
+		intList.forEach(n ->{
+			if(isEvenValue.test(n))
+				evenNumber.add(n);
+		});
+		System.out.println("Method7 Even Values :"+evenNumber);
 	}
 }

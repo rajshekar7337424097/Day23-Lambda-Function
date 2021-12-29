@@ -4,11 +4,6 @@ package com.bl.lamda;
 interface IMathFunction {
 	
 	int calculate( int a, int b);
-	
-	static void printResult(int a, int b, IMathFunction fobj) {
-		System.out.println(fobj.calculate(a, b));
-	}
-	
 }
 
 public class MathOperation {
@@ -32,15 +27,5 @@ public class MathOperation {
 		};
 		
 		System.out.println(division.calculate(23, 6));
-		
-		IMathFunction.printResult(7, 9, add);
-		
-		IMathFunction.printResult(8, 9, multiplication);
-		
-		IMathFunction.printResult(10, 9, substraction);
-		
-		IMathFunction.printResult(9, 9, division);
-		
-		
-		}
+	}
 }
